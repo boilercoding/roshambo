@@ -6,9 +6,14 @@ defmodule Roshambo do
 
   def main(argv) do
     argv
+    |> winner_is
+    |> IO.puts
+  end
+
+  def winner_is(argv) do
+    argv
     |> parse_args
     |> determine_winner
-    |> IO.puts
   end
 
   defp parse_args(argv) do
